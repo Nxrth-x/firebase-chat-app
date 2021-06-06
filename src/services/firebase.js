@@ -1,0 +1,20 @@
+//@ts-check
+
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBuckeT: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+};
+
+export const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+export const auth = firebase.auth(firebaseApp);
+export const firestore = firebase.firestore(firebaseApp);
